@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 #参数设置
 L = 3.0 # 空间域长度
-T = 3.0 # 总时间
+T = 1.0 # 总时间
 Nx = 300 # 空间网格数
 a = 1 # 波动方程系数
-c = 0.9 # c = a * dt / dx
+c = 0.8 # c = a * dt / dx
 
 #参数计算
 dx = L / Nx # 空间步长
@@ -29,11 +29,11 @@ for n in range(Nt):
     u_exact = np.sin(2 * np.pi * (x - a * t))
 
 plt.figure(figsize=(10,6))
-plt.plot(x, u_new, 'r--', lw=2, label='Lax格式数值解')
-plt.plot(x, u_exact, 'k-', lw=1, alpha=0.8, label='精确解')
-plt.title(f"一阶波动方程解比较 ")
-plt.xlabel('空间位置 x')
-plt.ylabel('幅值 u')
+plt.plot(x, u_new, 'r--', lw=2, label='Lax format numerical solution')
+plt.plot(x, u_exact, 'k-', lw=1, alpha=0.8, label='exact solution')
+plt.title(f"Comparison of First Order Wave Equation Solutions")
+plt.xlabel('spatial position x')
+plt.ylabel('amplitude u')
 plt.legend()
 plt.grid(True)
 plt.show()
