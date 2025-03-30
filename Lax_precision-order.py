@@ -43,7 +43,7 @@ for Nx in Nx_list:
 
 # 绘制误差与dx关系图
 dx_list = [3.0 / Nx for Nx in Nx_list]
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(10, 6))
 plt.loglog(dx_list, errors, 'o-', label='L2 error')
 plt.loglog(dx_list, [errors[0] * (dx / dx_list[0]) for dx in dx_list], 'k--', label='first order slope for reference') # 绘制基于error[0]的一阶收敛的理论参考斜线
 plt.loglog(dx_list, [errors[0] * (dx / dx_list[0]) * (dx / dx_list[0]) for dx in dx_list], 'g-.', label='second order slope for reference') # 绘制基于error[0]的二阶收敛的理论参考斜线
