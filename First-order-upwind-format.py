@@ -20,7 +20,7 @@ u_exact = u_new.copy()
 for n in range(Nt):
     u_old = u_new.copy()
 
-    u_new[1 : -1] = u_old[1 : -1] - c * (u_old[1 : -1] - u_old[ : -2]) # Lax-Wendroff格式
+    u_new[1 : -1] = u_old[1 : -1] - c * (u_old[1 : -1] - u_old[ : -2]) # 一阶迎风格式
 
     u_new[0] = u_old[0] - c * (u_old[0] - u_old[-2]) # 边界条件
     u_new[-1] = u_new[0] # 周期条件
